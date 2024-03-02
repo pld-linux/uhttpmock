@@ -7,6 +7,7 @@
 Summary:	HTTP web service mocking library
 Summary(pl.UTF-8):	Biblioteka do tworzenia atrap usług HTTP
 Name:		uhttpmock
+# keep < 0.9 here; for 0.9+ (ported to libsoup3) see uhttpmock1.spec
 Version:	0.5.5
 Release:	1
 License:	LGPL v2.1+
