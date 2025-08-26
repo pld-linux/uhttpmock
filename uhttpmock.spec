@@ -24,7 +24,7 @@ BuildRequires:	meson
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	vala
 Requires:	glib2 >= 1:2.38
 Requires:	libsoup >= 2.48
@@ -97,16 +97,16 @@ Dokumentacja API biblioteki uhttpmock.
 %setup -q
 
 %build
-%meson build
-
-%ninja_build -C build \
+%meson \
 	%{!?with_static_libs:--default-library=shared} \
 	%{!?with_apidocs:-Dgtk_doc=false}
+
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
